@@ -8,13 +8,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-
+    <script src="./js/jogo.js" defer></script>
 </head>
 <body>
+    
     <h1>Epic Task</h1>
 
-    
-    <form action="">
+    <form onsubmit="return validarFormulario()" action="" enctype="multipart/form-data">
         <h2 class="nes-text is-primary">Cadastrar seu jogo</h2>
         <div class="nes-field">
             <label for="titulo">Nome do jogo</label>
@@ -23,23 +23,23 @@
         </div>
 
         <div class="nes-field">
-            <label for="descricao">Descrição do jogo(estado de conservação,motivo de venda)</label>
-            <textarea id="descricao" class="nes-textarea"></textarea>
-            <span id="descricao-erro" class="nes-text is-error"></span>
-
+            <label for="imagem">Imagem do jogo</label>
+            <input type="file" id="imagem" accept="image/*" class="nes-input">
+            <span id="imagem-erro" class="nes-text is-error"></span>
         </div>
+
         <div class="nes-field">
-            <label for="pontos">Pontos</label>
-            <input type="number" id="pontos" class="nes-input">
-            <span id="pontos-erro" class="nes-text is-error"></span>
+            <label for="valor">Valor do jogo (em reais)</label>
+            <input type="text" id="valor" class="nes-input" pattern="^\d+(,\d{1,2})?$">
+            <span id="valor-erro" class="nes-text is-error"></span>
+        </div>
 
-        </div>
         <div class="acoes">
-            <a href="/index.html" class="nes-btn">cancelar</a>
-            <button type="button"   id="botao-cadastrar"  class="nes-btn is-primary">salvar</button>
-            
+            <a href="/index.html" class="nes-btn">Cancelar</a>
+            <button type="submit" id="botao-cadastrar" class="nes-btn is-primary">Salvar</button>
         </div>
-    
-        
-        
     </form>
+
+   
+</body>
+</html>
